@@ -53,3 +53,20 @@ for score in scores   ───▶    if score < 60     ───▶   最前面
 """
 
 print(f"不及格共有 {len(failures)} 科：{failures}")
+
+"""
+由高到低排名：[92, 88, 75, 60, 45]
+前三名成績：[92, 88, 75]
+刪除 45 分後：[92, 88, 75, 60]
+第一名加 5 分後：[97, 88, 75, 60]
+
+"""
+scores = [75, 92, 60, 88, 45]
+scores.sort(reverse=True)
+print(f"成績高低:{scores}")
+three = scores[0:3]
+print(f"前三名成績:{three}")
+fail = [i for i in scores if i != 45]
+print(f"撇除45分後的成績:{fail}")
+fail[0] += 5
+print(f"第一名加5分後的成績:{fail}")
